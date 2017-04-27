@@ -1,0 +1,202 @@
+/* 
+	The .cabinets class is 200px x 400px and so are the spacers,
+		- this needs to be changed to a percentagea of the viewport
+		- each cabinet div contains an img, an overlay an a div containing text
+		- the class .cabinetLg is added the the div with the .cabinet class to zoom in on the cabinet, the overlay and the text
+		- THe image is setting the size of the cabinets, and the spacer is setting the size of
+*/
+
+#cabinets {
+	position:relative;
+}
+#cabinetHeader {
+	width:100vw;
+	background-color:#491D0C;
+	color:white;
+	text-align:center;
+	padding:10px 15px;
+	margin:70px 0px;
+	border-bottom:1px solid #ab8561;
+	border-top:1px solid #ab8561;
+}
+.bannerBody {
+	margin:25px 5px;
+}
+
+
+/*The infinite part */
+#cabinetCarousel {
+	position:relative;
+	width:1000vw;
+	height:auto;
+}
+/*the part that moves */
+#cabinetDiv {
+	white-space:nowrap;
+	position:relative;
+	left:auto;
+	right:auto;
+}
+
+/* Individual Cabinets and the Hover overlay */
+.cabinet {
+	float:left;
+	position:relative;
+	height:400px;
+	width:200px;
+	margin-left:200px;
+	/*margin:0px 100px;
+	/*display:inline-block; */
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+.cabinet.cabinetSm{
+	height:200px;
+	width:100px;
+	margin-left:100px;
+}
+/*
+.cabinetSpacer {
+	float:left;
+	position:relative;
+	height:400px;
+	width:0px;
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+
+.cabinetSpacer.cabinetSm {
+	width:100px;
+	height:200px;
+
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+/*
+.cabinetLg{
+	margin:0 70px;
+}
+*/
+.cabImg {
+	width:100%;
+	height:100%;
+	position:absolute;
+	
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+.cabinetLg > .cabImg {
+    -webkit-transform: scale(1.4); 
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+/*
+.cabinetSm > .cabImg {
+
+    -webkit-transform: scale(.6); 
+    -moz-transform: scale(.6);
+    -o-transform: scale(.6);
+    transform: scale(.6);
+
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+
+}
+*/
+
+.cabinetText {
+	position:absolute;
+	top:50px;
+	height:75%;
+	width:100%;
+	left:0;
+	color:white;
+	text-align:center;
+	opacity:0;
+	white-space:normal;
+	transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+}
+.cabinetLg > .cabinetText {
+	left:-50px; /* because the width is going from 200 to 300 it neds to be offset by 50 to be centered */
+	width:150%;
+	opacity: 1;
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+
+.cabinetText > div {
+	height:1px;
+	width:150px;
+	background-color:white;
+	display:inline-block;
+	margin-bottom:18px;
+}
+
+.cabinetOverlay {
+	border:4px double white;
+	position:absolute;
+	top:30px;
+	height:360px;
+	left:0;
+	width:200px;
+	opacity:0;
+	background-color:#38444A;
+	transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+}
+.cabinetLg > .cabinetOverlay {
+	left:-100px;
+	width:400px;
+	opacity: .6;
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+}
+
+/* Buttons to scroll cabinets left and right */
+.cabBtn {
+	z-index:9999;
+	position:absolute;
+	top:310px;
+	border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 15px;
+}
+#lCabinetBtn {
+	left:30px;
+	box-shadow:1px 1px;
+	transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+#rCabinetBtn {
+	right:30px;
+	box-shadow:1px 1px;
+	transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.clearer {
+	clear: both;
+}

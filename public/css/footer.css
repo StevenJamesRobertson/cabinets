@@ -1,0 +1,17 @@
+footer{
+	width:100vw;
+	background-color:#ab8561;
+	border-top:1px solid #491D0c;
+	padding:10px 15px 15px 15px;
+	color:#491D0c;
+	margin-top:35px;
+}
+#genInfo {
+	width:100%;
+	text-align:center;
+	margin:25px 5px;
+}
+.bannerBorder {
+	height:1px;
+	background-color:#491D0c;
+}
